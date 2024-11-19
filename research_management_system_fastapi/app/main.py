@@ -1,12 +1,12 @@
 from fastapi import FastAPI
-from app.models import property_model
-from app.routes.property_apis import router
-from app.config.config import engine
+from .models.user import User
+from .routes.user_apis import router
+from .config.config import engine
 
-property_model.Base.metadata.create_all(bind=engine)
+User.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-app.include_router(router, prefix="/api/v1", tags=["property"])
+app.include_router(router, prefix="/api/v1", tags=["user"])
 
 

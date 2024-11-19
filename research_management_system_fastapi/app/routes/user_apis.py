@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.config.config import SessionLocal
-from app.schemas.user_schema import UserSchema, UpdateUserSchema
-from app.crud.user_crud import (
+from ..config.config import SessionLocal
+from ..schemas.user_schema import UserSchema, UpdateUserSchema
+from ..crud.user_crud import (
     get_users,
     get_user_by_id,
     create_user,
